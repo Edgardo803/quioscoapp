@@ -12,6 +12,7 @@ const QuioscoProvider = ({children}) => {
     const [producto, setProducto ] = useState({})
     const [modal, setModal] = useState(false)
     const [pedido, setPedido] = useState([])
+    const [paso, setPaso] = useState(1)
     const [nombre, setNombre] = useState('')
     const [total, setTotal] = useState(0)
 
@@ -67,6 +68,8 @@ const QuioscoProvider = ({children}) => {
         
     }
 
+    
+
     const handleEditarCantidades = id => {
         const productoActualizar = pedido.filter( producto => producto.id === id)
         setProducto(productoActualizar[0])
@@ -114,12 +117,12 @@ const QuioscoProvider = ({children}) => {
                 handleChangeModal,
                 handleAgregarPedido,
                 pedido,
-                handleEditarCantidades,
-                handleEliminarProducto,
-                nombre, 
-                setNombre,
-                colocarOrden,
-                total
+               // handleEditarCantidades,
+               // handleEliminarProducto,
+               // nombre, 
+               // setNombre,
+               // colocarOrden,
+               // total
             }}
         >
             {children}
