@@ -26,5 +26,6 @@ const categorias = [
 ]
 
 export {
-    categorias
+    
+  categorias
 }
