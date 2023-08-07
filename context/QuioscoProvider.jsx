@@ -32,7 +32,8 @@ const QuioscoProvider = ({children}) => {
     }, [categorias])
 
     useEffect(() => {
-        const nuevoTotal = pedido.reduce((total, producto) => (producto.precio * producto.cantidad ) + total, 0)
+        const nuevoTotal = pedido.reduce((total, producto) => 
+        (producto.precio * producto.cantidad ) + total, 0)
 
         setTotal(nuevoTotal)
     }, [pedido])
@@ -85,7 +86,8 @@ const QuioscoProvider = ({children}) => {
         e.preventDefault();
 
         try {
-            await axios.post('/api/ordenes', {pedido, nombre, total, fecha: Date.now().toString()})
+            await axios.post('/api/ordenes', {pedido, nombre, total, 
+                fecha: Date.now().toString()})
 
             // Resetear la app
             setCategoriaActual(categorias[0])
@@ -117,12 +119,12 @@ const QuioscoProvider = ({children}) => {
                 handleChangeModal,
                 handleAgregarPedido,
                 pedido,
-               // handleEditarCantidades,
-               // handleEliminarProducto,
-               // nombre, 
-               // setNombre,
-               // colocarOrden,
-               // total
+                handleEditarCantidades,
+                handleEliminarProducto,
+                nombre, 
+                setNombre,
+                colocarOrden,
+                total
             }}
         >
             {children}
