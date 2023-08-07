@@ -27,5 +27,6 @@ const categorias = [
 
 export {
     
+  
   categorias
 }
